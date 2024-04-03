@@ -4,21 +4,47 @@ function shufflecards(){
 	show_debug_message("SHUFFLING CARDS")
 
 	deck = array_shuffle(deck)
+	add = 0
+	//make them go on top. adding to depth value makes it go further BACK.
+	//for (var i = 0; i < array_length(deck) ; i++){
+	//	card = deck[i]
+	//	add += 10
+	//	with (card){
+	//		depth -= other.add;
+	//	}
+	//}
+	
 	pluha = 0
 	for (var i = 0; i < array_length(deck) ; i++){
 		card = deck[i]
 		with (card){
-			destination_x = oDeckPlace.x;
-			destination_y = oDeckPlace.y + other.pluha;
-			donemoving = false
-			move_towards_point(destination_x,destination_y,10);
-				
+			//destination_x = oDeckPlace.x;
+			//destination_y = oDeckPlace.y + other.pluha;
+			//donemoving = false
+			//move_towards_point(destination_x,destination_y,1);
+			path_start(Path1,8,path_action_stop,false)
+			if path_endaction == path_action_stop{
+				destination_x = oDeckPlace.x;
+				destination_y = oDeckPlace.y + other.pluha;
+			}
 			} 
 			pluha += 3;
 		} 
 		
 	
-	
+		for (var i = 0; i < array_length(deck) ; i++){
+		card = deck[i]
+		
+		with (card){
+			if (other.deck == id) depth = -1000
+			depth = -i * 10
+			show_debug_message(id)
+			show_debug_message(depth)
+			//depth -= //other.add;
+			show_debug_message(depth)
+		}
+		add += 10
+		}
 	
 	
 	show_debug_message(deck[0])
