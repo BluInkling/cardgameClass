@@ -37,7 +37,7 @@ function shufflecards(){
 		
 		with (card){
 			if (other.deck == id) depth = -1000
-			depth = -i * 10
+			depth = i * 10
 			show_debug_message(id)
 			show_debug_message(depth)
 			//depth -= //other.add;
